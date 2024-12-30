@@ -1,28 +1,105 @@
 {
     "header": "Daily Travel Schedule",
-    "date": "December 30, 2024",
+    "date": "June 15, 2025",
     "timeBlocks": [
         {
-            "time": "08:00 AM - 09:00 AM",
-            "type": "Breakfast",
-            "title": "Morning Meal",
+            "time": "06:00 AM - 08:00 AM",
+            "type": "Flight",
+            "title": "Morning Flight to Destination",
             "location": {
-                "name": "Grand Hotel Lobby",
-                "url": "https://goo.gl/maps/example1"
+                "name": "City International Airport",
+                "url": "https://goo.gl/maps/exampleFlight"
             },
-            "activity": "Breakfast and Check-out",
-            "details": "Enjoy a buffet breakfast before we check out."
+            "activity": "Board the morning flight to the destination.",
+            "details": "Check-in starts at 5:00 AM. Bring your passport and boarding pass."
         },
         {
-            "time": "09:30 AM - 12:00 PM",
-            "type": "Tour",
-            "title": "City Walking Tour",
+            "time": "08:30 AM - 09:30 AM",
+            "type": "Breakfast",
+            "title": "Buffet Breakfast",
             "location": {
-                "name": "Downtown Plaza",
-                "url": "https://goo.gl/maps/example2"
+                "name": "Airport Lounge",
+                "url": "https://goo.gl/maps/exampleBreakfast"
             },
-            "activity": "Explore the city's historical landmarks.",
-            "details": "Bring comfortable walking shoes."
+            "activity": "Enjoy a complimentary buffet breakfast.",
+            "details": "Start the day with a hearty meal before departure."
+        },
+        {
+            "time": "10:00 AM - 12:00 PM",
+            "type": "Hotel",
+            "title": "Hotel Check-in",
+            "location": {
+                "name": "Grand Stay Hotel",
+                "url": "https://goo.gl/maps/exampleHotel"
+            },
+            "activity": "Check-in and drop off luggage.",
+            "details": "Room is reserved under your name. Ask for a late check-out if needed."
+        },
+        {
+            "time": "01:00 PM - 03:00 PM",
+            "type": "Lunch",
+            "title": "Local Cuisine Lunch",
+            "location": {
+                "name": "Downtown Cafe",
+                "url": "https://goo.gl/maps/exampleLunch"
+            },
+            "activity": "Try a variety of local dishes.",
+            "details": "Reservations are made for 1:00 PM. Ask for the chef's special."
+        },
+        {
+            "time": "03:30 PM - 05:30 PM",
+            "type": "Tour",
+            "title": "Guided City Tour",
+            "location": {
+                "name": "Historical District",
+                "url": "https://goo.gl/maps/exampleTour"
+            },
+            "activity": "Explore landmarks with a guide.",
+            "details": "Wear comfortable shoes and bring water."
+        },
+        {
+            "time": "06:00 PM - 07:00 PM",
+            "type": "Adventure",
+            "title": "Mountain Zip-lining",
+            "location": {
+                "name": "Adventure Park",
+                "url": "https://goo.gl/maps/exampleAdventure"
+            },
+            "activity": "Experience an adrenaline-filled zip-lining session.",
+            "details": "Safety gear is provided. Follow the instructor's guidance."
+        },
+        {
+            "time": "07:30 PM - 09:00 PM",
+            "type": "Dinner",
+            "title": "Fine Dining Experience",
+            "location": {
+                "name": "Skyline Restaurant",
+                "url": "https://goo.gl/maps/exampleDinner"
+            },
+            "activity": "Savor a multi-course gourmet meal.",
+            "details": "Reservations are at 7:30 PM. Dress code: Smart casual."
+        },
+        {
+            "time": "09:30 PM - 11:00 PM",
+            "type": "RoadTrip",
+            "title": "Drive to the Next Stop",
+            "location": {
+                "name": "Coastal Highway",
+                "url": "https://goo.gl/maps/exampleRoadTrip"
+            },
+            "activity": "Enjoy a scenic drive along the coast.",
+            "details": "Ensure your vehicle is fueled. Drive carefully at night."
+        },
+        {
+            "time": "11:30 PM - 12:30 AM",
+            "type": "FreeTime",
+            "title": "Relax and Unwind",
+            "location": {
+                "name": "Hotel Room",
+                "url": "https://goo.gl/maps/exampleFreeTime"
+            },
+            "activity": "Relax, read a book, or watch a movie.",
+            "details": "Prepare for the next day's adventures."
         }
     ]
 }
