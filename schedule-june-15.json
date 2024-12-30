@@ -1,87 +1,28 @@
 {
     "header": "Daily Travel Schedule",
-    "date": "June 15, 2025",
+    "date": "December 30, 2024",
     "timeBlocks": [
         {
             "time": "08:00 AM - 09:00 AM",
-            "title": "Hotel",
-            "emoji": "🏨",
+            "type": "Breakfast",
+            "title": "Morning Meal",
             "location": {
                 "name": "Grand Hotel Lobby",
                 "url": "https://goo.gl/maps/example1"
             },
             "activity": "Breakfast and Check-out",
-            "details": "Enjoy a buffet breakfast before we check out.",
-            "outlineColor": "#007BFF",
-            "titleColor": "#000080"
+            "details": "Enjoy a buffet breakfast before we check out."
         },
         {
             "time": "09:30 AM - 12:00 PM",
-            "title": "Meeting",
-            "emoji": "📋",
+            "type": "Tour",
+            "title": "City Walking Tour",
             "location": {
-                "name": "Conference Center",
+                "name": "Downtown Plaza",
                 "url": "https://goo.gl/maps/example2"
             },
-            "activity": "Team Meeting",
-            "details": "Discuss quarterly results and roadmap.",
-            "outlineColor": "#FF6347",
-            "titleColor": "#800000"
-        }
-    ]
-}
-{
-    "header": "Daily Travel Schedule",
-    "date": "June 15, 2024",
-    "timeBlocks": [
-        {
-            "time": "3:00 PM",
-            "title": "InterContinental Auckland Hotel 🏨",
-            "location": {
-                "name": "Map of the hotel",
-                "url": "https://maps.app.goo.gl/PQUjMzMR8FfJJdzZ9"
-            },
-            "activity": "Check-in",
-            "details": "Confirmation numbers 25251080, 43771354, 67471246"
-        },
-        {
-            "time": "ignore - 09:30 AM - 12:00 PM",
-            "title": "Meeting 🧑‍💼",
-            "location": {
-                "name": "Conference Center",
-            },
-            "activity": "Team Meeting",
-            "details": "Discuss quarterly results and roadmap for next year in Conference Room B."
-        },
-        {
-            "time": "12:30 PM - 01:30 PM",
-            "title": "Lunch 🍴",
-            "location": {
-                "name": "Local Cafe",
-                "url": "https://goo.gl/maps/example3"
-            },
-            "activity": "Lunch Break",
-            "details": "Try the chef's special or grab a quick sandwich if you're in a rush."
-        },
-        {
-            "time": "02:00 PM - 05:00 PM",
-            "title": "Workshop 📚",
-            "location": {
-                "name": "Office HQ",
-                "url": "https://goo.gl/maps/example4"
-            },
-            "activity": "Workshops and Presentations",
-            "details": "Participate in hands-on training sessions and presentations from guest speakers."
-        },
-        {
-            "time": "06:00 PM - 08:00 PM",
-            "title": "Dinner 🍽️",
-            "location": {
-                "name": "Downtown Bistro",
-                "url": "https://goo.gl/maps/example5"
-            },
-            "activity": "Dinner and Networking",
-            "details": "Enjoy a formal dinner with colleagues and network with industry professionals."
+            "activity": "Explore the city's historical landmarks.",
+            "details": "Bring comfortable walking shoes."
         }
     ]
 }
