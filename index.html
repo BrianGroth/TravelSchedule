@@ -36,16 +36,15 @@
 
         .container {
             padding: 20px;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .time-block {
-            background: white;
-            margin-bottom: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 15px 20px;
+            margin-bottom: 15px;
             transition: transform 0.2s ease-in-out;
         }
 
@@ -56,7 +55,6 @@
         .time-block h3 {
             margin: 0 0 10px;
             font-size: 18px;
-            color: #007BFF;
         }
 
         .time-block p {
@@ -125,10 +123,12 @@
                 dailyData.timeBlocks.forEach(block => {
                     const blockElement = document.createElement('div');
                     blockElement.className = 'time-block';
+                    blockElement.style.border = `2px solid ${block.outlineColor}`;
+                    blockElement.style.color = `${block.titleColor}`;
 
                     // Build the content dynamically
                     blockElement.innerHTML = `
-                        <h3>${block.time} - ${block.title}</h3>
+                        <h3>${block.emoji} ${block.time} - ${block.title}</h3>
                         <p><strong>Location:</strong> <a href="${block.location.url}" target="_blank">${block.location.name}</a></p>
                         <p><strong>Activity:</strong> ${block.activity}</p>
                         <p><strong>Details:</strong> ${block.details}</p>
