@@ -1,31 +1,56 @@
 {
     "header": "Daily Travel Schedule",
-    "date": "June 15, 2025",
+    "date": "June 15, 2024",
     "timeBlocks": [
         {
-            "time": "3:00pm",
-            "location": "InterContinental Auckland Hotel Lobby",
-            "activity": "Check-in"
+            "time": "3:00 PM",
+            "title": "InterContinental Auckland Hotel 🏨",
+            "location": {
+                "name": "Map of the hotel",
+                "url": "https://maps.app.goo.gl/PQUjMzMR8FfJJdzZ9"
+            },
+            "activity": "Check-in",
+            "details": "Confirmation numbers 25251080, 43771354, 67471246"
         },
         {
-            "time": "09:30 AM - 12:00 PM",
-            "location": "Conference Center",
-            "activity": "Team Meeting"
+            "time": "ignore - 09:30 AM - 12:00 PM",
+            "title": "Meeting 🧑‍💼",
+            "location": {
+                "name": "Conference Center",
+                "url": "https://goo.gl/maps/example2"
+            },
+            "activity": "Team Meeting",
+            "details": "Discuss quarterly results and roadmap for next year in Conference Room B."
         },
         {
             "time": "12:30 PM - 01:30 PM",
-            "location": "Local Cafe",
-            "activity": "Lunch Break"
+            "title": "Lunch 🍴",
+            "location": {
+                "name": "Local Cafe",
+                "url": "https://goo.gl/maps/example3"
+            },
+            "activity": "Lunch Break",
+            "details": "Try the chef's special or grab a quick sandwich if you're in a rush."
         },
         {
             "time": "02:00 PM - 05:00 PM",
-            "location": "Office HQ",
-            "activity": "Workshops and Presentations"
+            "title": "Workshop 📚",
+            "location": {
+                "name": "Office HQ",
+                "url": "https://goo.gl/maps/example4"
+            },
+            "activity": "Workshops and Presentations",
+            "details": "Participate in hands-on training sessions and presentations from guest speakers."
         },
         {
             "time": "06:00 PM - 08:00 PM",
-            "location": "Downtown",
-            "activity": "Dinner and Networking"
+            "title": "Dinner 🍽️",
+            "location": {
+                "name": "Downtown Bistro",
+                "url": "https://goo.gl/maps/example5"
+            },
+            "activity": "Dinner and Networking",
+            "details": "Enjoy a formal dinner with colleagues and network with industry professionals."
         }
     ]
 }
