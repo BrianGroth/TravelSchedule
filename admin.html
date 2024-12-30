@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Travel Schedules</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007BFF, #00C6FF);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .file-list {
+            margin: 20px 0;
+        }
+
+        .file-list select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .form-group input[type="color"] {
+            width: 50px;
+            padding: 0;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .preview {
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Panel: Manage Travel Schedules</h1>
+    </header>
+    <div class="container">
+        <div class="file-list">
+            <h2>Available Schedule Files</h2>
+            <select id="file-select">
+                <option value="">-- Select a file to edit --</option>
+            </select>
+            <button id="load-file-btn">Load File</button>
+        </div>
+
+        <h2>Create/Edit Schedule</h2>
+        <form id="schedule-form">
+            <div class="form-group">
+                <label for="time">Time</label>
+                <input type="text" id="time" placeholder="e.g., 08:00 AM - 09:00 AM">
+            </div>
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="e.g., Breakfast">
+            </div>
+
+            <div class="form-group">
+                <label for="type">Type</label>
+                <select id="type">
+                    <option value="Flight">Flight</option>
+                    <option value="Hotel">Hotel</option>
+                    <option value="Tour">Tour</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Road Trip">Road Trip</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Free Time">Free Time</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="emoji">Emoji</label>
+                <input type="text" id="emoji" placeholder="e.g., 🏨">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location (Google Maps URL)</label>
+                <input type="text" id="location" placeholder="e.g., https://goo.gl/maps/example">
+            </div>
+
+            <div class="form-group">
+                <label for="activity">Activity</label>
+                <textarea id="activity" placeholder="e.g., Enjoy breakfast buffet"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="details">Details</label>
+                <textarea id="details" placeholder="e.g., Don't forget to grab your room key."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="outline-color">Outline Color</label>
+                <input type="color" id="outline-color" value="#007BFF">
+            </div>
+
+            <div class="form-group">
+                <label for="title-color">Title Color</label>
+                <input type="color" id="title-color" value="#007BFF">
+            </div>
+
+            <button type="button" id="add-section-btn">Add Section</button>
+        </form>
+
+        <button id="save-file-btn">Save File</button>
+
+        <div class="preview">
+            <h2>Preview</h2>
+            <div id="preview-container"></div>
+        </div>
+    </div>
+
+    <script>
+        async function listFiles() {
+            // Fetch all available JSON files (dummy implementation; update for backend or directory listing)
+            const files = ["schedule-december-30.json", "schedule-december-31.json"];
+            const fileSelect = document.getElementById('file-select');
+
+            files.forEach(file => {
+                const option = document.createElement('option');
+                option.value = file;
+                option.textContent = file;
+                fileSelect.appendChild(option);
+            });
+        }
+
+        function addSectionToPreview(section) {
+            const previewContainer = document.getElementById('preview-container');
+            const sectionDiv = document.createElement('div');
+            sectionDiv.style.border = `2px solid ${section.outlineColor}`;
+            sectionDiv.style.color = section.titleColor;
+            sectionDiv.style.marginBottom = '10px';
+            sectionDiv.style.padding = '10px';
+            sectionDiv.innerHTML = `
+                <h3>${section.emoji} ${section.title}</h3>
+                <p><strong>Time:</strong> ${section.time}</p>
+                <p><strong>Location:</strong> <a href="${section.location}" target="_blank">${section.location}</a></p>
+                <p><strong>Activity:</strong> ${section.activity}</p>
+                <p><strong>Details:</strong> ${section.details}</p>
+            `;
+            previewContainer.appendChild(sectionDiv);
+        }
+
+        document.getElementById('add-section-btn').addEventListener('click', () => {
+            const time = document.getElementById('time').value;
+            const title = document.getElementById('title').value;
+            const type = document.getElementById('type').value;
+            const emoji = document.getElementById('emoji').value;
+            const location = document.getElementById('location').value;
+            const activity = document.getElementById('activity').value;
+            const details = document.getElementById('details').value;
+            const outlineColor = document.getElementById('outline-color').value;
+            const titleColor = document.getElementById('title-color').value;
+
+            const section = { time, title, type, emoji, location, activity, details, outlineColor, titleColor };
+            addSectionToPreview(section);
+        });
+
+        document.getElementById('save-file-btn').addEventListener('click', () => {
+            // Save file logic here (e.g., POST to server or save to disk)
+            alert('Save functionality to be implemented.');
+        });
+
+        listFiles();
+    </script>
+</body>
+</html>
