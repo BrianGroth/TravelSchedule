@@ -1,6 +1,6 @@
 {
     "header": "Daily Travel Schedule",
-    "date": "June 15th, 2025",
+    "date": "December 30, 2024",
     "timeBlocks": [
         {
             "time": "06:00 AM - 08:00 AM",
@@ -66,4 +66,49 @@
             "time": "06:00 PM - 07:00 PM",
             "type": "Adventure",
             "title": "Mountain Zip-lining",
-            "emoji": "
+            "emoji": "🎢",
+            "location": {
+                "name": "Adventure Park",
+                "url": "https://goo.gl/maps/exampleAdventure"
+            },
+            "activity": "Experience an adrenaline-filled zip-lining session.",
+            "details": "Safety gear is provided. Follow the instructor's guidance."
+        },
+        {
+            "time": "07:30 PM - 09:00 PM",
+            "type": "Dinner",
+            "title": "Fine Dining Experience",
+            "emoji": "🍽️",
+            "location": {
+                "name": "Skyline Restaurant",
+                "url": "https://goo.gl/maps/exampleDinner"
+            },
+            "activity": "Savor a multi-course gourmet meal.",
+            "details": "Reservations are at 7:30 PM. Dress code: Smart casual."
+        },
+        {
+            "time": "09:30 PM - 11:00 PM",
+            "type": "RoadTrip",
+            "title": "Drive to the Next Stop",
+            "emoji": "🚗",
+            "location": {
+                "name": "Coastal Highway",
+                "url": "https://goo.gl/maps/exampleRoadTrip"
+            },
+            "activity": "Enjoy a scenic drive along the coast.",
+            "details": "Ensure your vehicle is fueled. Drive carefully at night."
+        },
+        {
+            "time": "11:30 PM - 12:30 AM",
+            "type": "FreeTime",
+            "title": "Relax and Unwind",
+            "emoji": "🕰️",
+            "location": {
+                "name": "Hotel Room",
+                "url": "https://goo.gl/maps/exampleFreeTime"
+            },
+            "activity": "Relax, read a book, or watch a movie.",
+            "details": "Prepare for the next day's adventures."
+        }
+    ]
+}
