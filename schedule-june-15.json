@@ -1,5 +1,37 @@
 {
     "header": "Daily Travel Schedule",
+    "date": "June 15, 2025",
+    "timeBlocks": [
+        {
+            "time": "08:00 AM - 09:00 AM",
+            "title": "Hotel",
+            "emoji": "🏨",
+            "location": {
+                "name": "Grand Hotel Lobby",
+                "url": "https://goo.gl/maps/example1"
+            },
+            "activity": "Breakfast and Check-out",
+            "details": "Enjoy a buffet breakfast before we check out.",
+            "outlineColor": "#007BFF",
+            "titleColor": "#000080"
+        },
+        {
+            "time": "09:30 AM - 12:00 PM",
+            "title": "Meeting",
+            "emoji": "📋",
+            "location": {
+                "name": "Conference Center",
+                "url": "https://goo.gl/maps/example2"
+            },
+            "activity": "Team Meeting",
+            "details": "Discuss quarterly results and roadmap.",
+            "outlineColor": "#FF6347",
+            "titleColor": "#800000"
+        }
+    ]
+}
+{
+    "header": "Daily Travel Schedule",
     "date": "June 15, 2024",
     "timeBlocks": [
         {
