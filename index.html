@@ -100,6 +100,55 @@
     <div class="container" id="schedule-container"></div>
 
     <script>
+        // Map activity types to styles
+        const activityStyles = {
+            Flight: {
+                outlineColor: '#1E90FF', // Light blue
+                titleColor: '#4682B4',   // Steel blue
+                emoji: '✈️'
+            },
+            Hotel: {
+                outlineColor: '#FFD700', // Gold
+                titleColor: '#DAA520',   // Goldenrod
+                emoji: '🏨'
+            },
+            Tour: {
+                outlineColor: '#32CD32', // Lime green
+                titleColor: '#228B22',   // Forest green
+                emoji: '🗺️'
+            },
+            Adventure: {
+                outlineColor: '#FF4500', // Orange red
+                titleColor: '#B22222',   // Firebrick
+                emoji: '🎢'
+            },
+            RoadTrip: {
+                outlineColor: '#FF69B4', // Hot pink
+                titleColor: '#C71585',   // Medium violet red
+                emoji: '🚗'
+            },
+            Breakfast: {
+                outlineColor: '#FFA07A', // Light salmon
+                titleColor: '#FF6347',   // Tomato
+                emoji: '🍳'
+            },
+            Lunch: {
+                outlineColor: '#87CEFA', // Light sky blue
+                titleColor: '#4682B4',   // Steel blue
+                emoji: '🥗'
+            },
+            Dinner: {
+                outlineColor: '#9370DB', // Medium purple
+                titleColor: '#4B0082',   // Indigo
+                emoji: '🍽️'
+            },
+            FreeTime: {
+                outlineColor: '#D3D3D3', // Light gray
+                titleColor: '#A9A9A9',   // Dark gray
+                emoji: '🕰️'
+            }
+        };
+
         async function loadSchedule() {
             try {
                 // Fetch the master JSON file
@@ -121,14 +170,17 @@
                 scheduleContainer.innerHTML = ''; // Clear existing content
 
                 dailyData.timeBlocks.forEach(block => {
+                    const activityType = block.type || 'FreeTime'; // Default to FreeTime if type is missing
+                    const style = activityStyles[activityType];
+
                     const blockElement = document.createElement('div');
                     blockElement.className = 'time-block';
-                    blockElement.style.border = `2px solid ${block.outlineColor}`;
-                    blockElement.style.color = `${block.titleColor}`;
+                    blockElement.style.border = `2px solid ${style.outlineColor}`;
+                    blockElement.style.color = `${style.titleColor}`;
 
                     // Build the content dynamically
                     blockElement.innerHTML = `
-                        <h3>${block.emoji} ${block.time} - ${block.title}</h3>
+                        <h3>${style.emoji} ${block.time} - ${block.title}</h3>
                         <p><strong>Location:</strong> <a href="${block.location.url}" target="_blank">${block.location.name}</a></p>
                         <p><strong>Activity:</strong> ${block.activity}</p>
                         <p><strong>Details:</strong> ${block.details}</p>
