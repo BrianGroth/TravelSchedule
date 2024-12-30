@@ -65,6 +65,15 @@
             line-height: 1.5;
         }
 
+        .time-block a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .time-block a:hover {
+            text-decoration: underline;
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 600px) {
             header h1 {
@@ -117,10 +126,12 @@
                     const blockElement = document.createElement('div');
                     blockElement.className = 'time-block';
 
+                    // Build the content dynamically
                     blockElement.innerHTML = `
-                        <h3>${block.time}</h3>
-                        <p><strong>Location:</strong> ${block.location}</p>
+                        <h3>${block.time} - ${block.title}</h3>
+                        <p><strong>Location:</strong> <a href="${block.location.url}" target="_blank">${block.location.name}</a></p>
                         <p><strong>Activity:</strong> ${block.activity}</p>
+                        <p><strong>Details:</strong> ${block.details}</p>
                     `;
 
                     scheduleContainer.appendChild(blockElement);
