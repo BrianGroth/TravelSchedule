@@ -72,6 +72,42 @@
             text-decoration: underline;
         }
 
+        footer {
+            padding: 20px;
+            background-color: #f1f1f1;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            border-top: 1px solid #ccc;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 15px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        .credits {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 600px) {
             header h1 {
@@ -89,6 +125,11 @@
             .time-block p {
                 font-size: 13px;
             }
+
+            .legend {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -98,53 +139,61 @@
         <p id="date-text"></p>
     </header>
     <div class="container" id="schedule-container"></div>
+    <footer>
+        <div class="legend">
+            <!-- Legend items for each activity type -->
+        </div>
+        <div class="credits">
+            Credits: Funding: Mom/Grandma, Travel Agent: Lorie, App Developer: Brian
+        </div>
+    </footer>
 
     <script>
         // Map activity types to styles
         const activityStyles = {
             Flight: {
-                outlineColor: '#1E90FF', // Light blue
-                titleColor: '#4682B4',   // Steel blue
+                outlineColor: '#ADD8E6', // Light Blue
+                titleColor: '#4682B4',  // Steel Blue
                 emoji: '✈️'
             },
             Hotel: {
-                outlineColor: '#FFD700', // Gold
-                titleColor: '#DAA520',   // Goldenrod
+                outlineColor: '#B0B0B0', // Grey
+                titleColor: '#696969',   // Dim Grey
                 emoji: '🏨'
             },
             Tour: {
-                outlineColor: '#32CD32', // Lime green
-                titleColor: '#228B22',   // Forest green
+                outlineColor: '#32CD32', // Green
+                titleColor: '#228B22',   // Forest Green
                 emoji: '🗺️'
             },
             Adventure: {
-                outlineColor: '#FF4500', // Orange red
-                titleColor: '#B22222',   // Firebrick
+                outlineColor: '#FFA500', // Orange
+                titleColor: '#FF8C00',   // Dark Orange
                 emoji: '🎢'
             },
             RoadTrip: {
-                outlineColor: '#FF69B4', // Hot pink
-                titleColor: '#C71585',   // Medium violet red
+                outlineColor: '#000000', // Black
+                titleColor: '#333333',   // Charcoal
                 emoji: '🚗'
             },
             Breakfast: {
-                outlineColor: '#FFA07A', // Light salmon
-                titleColor: '#FF6347',   // Tomato
+                outlineColor: '#FFFACD', // Light Yellow
+                titleColor: '#FFD700',   // Gold
                 emoji: '🍳'
             },
             Lunch: {
-                outlineColor: '#87CEFA', // Light sky blue
-                titleColor: '#4682B4',   // Steel blue
+                outlineColor: '#FFEB3B', // Medium Yellow
+                titleColor: '#BDB76B',   // Dark Khaki
                 emoji: '🥗'
             },
             Dinner: {
-                outlineColor: '#9370DB', // Medium purple
-                titleColor: '#4B0082',   // Indigo
+                outlineColor: '#FFD700', // Dark Yellow
+                titleColor: '#DAA520',   // Goldenrod
                 emoji: '🍽️'
             },
             FreeTime: {
-                outlineColor: '#D3D3D3', // Light gray
-                titleColor: '#A9A9A9',   // Dark gray
+                outlineColor: '#00008B', // Dark Blue
+                titleColor: '#000080',   // Navy Blue
                 emoji: '🕰️'
             }
         };
@@ -187,6 +236,20 @@
                     `;
 
                     scheduleContainer.appendChild(blockElement);
+                });
+
+                // Populate footer legend
+                const legendContainer = document.querySelector('.legend');
+                legendContainer.innerHTML = ''; // Clear existing legend content
+                Object.keys(activityStyles).forEach(type => {
+                    const { outlineColor, emoji } = activityStyles[type];
+                    const legendItem = document.createElement('div');
+                    legendItem.className = 'legend-item';
+                    legendItem.innerHTML = `
+                        <span class="legend-color" style="background-color: ${outlineColor};"></span>
+                        <span>${emoji} ${type}</span>
+                    `;
+                    legendContainer.appendChild(legendItem);
                 });
             } catch (error) {
                 console.error('Error loading schedule:', error);
