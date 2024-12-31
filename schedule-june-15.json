@@ -4,7 +4,7 @@
     "timeBlocks": [
         {
             "time": "06:00 AM - 08:00 AM",
-            "type": "Flight",
+            "type": "Booked",
             "location": {
                 "name": "City International Airport",
                 "url": "https://goo.gl/maps/exampleFlight"
@@ -76,7 +76,7 @@
         },
         {
             "time": "11:30 PM - 12:30 AM",
-            "type": "FreeTime",
+            "type": "Planned",
             "location": {
                 "name": "Hotel Room",
                 "url": "https://goo.gl/maps/exampleFreeTime"
