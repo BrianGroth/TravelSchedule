@@ -13,6 +13,8 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            font-size: 18px;
+            line-height: 1.6;
         }
 
         header {
@@ -25,12 +27,12 @@
 
         header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 28px;
         }
 
         header p {
             margin: 5px 0 0;
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 300;
         }
 
@@ -42,9 +44,11 @@
 
         .time-block {
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 15px 20px;
+            background-color: #F0F0F0; /* Light Grey Background */
+            color: #003366; /* Dark Blue Text */
+            padding: 20px;
             margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease-in-out;
         }
 
@@ -54,13 +58,12 @@
 
         .time-block h3 {
             margin: 0 0 10px;
-            font-size: 18px;
+            font-size: 22px;
         }
 
         .time-block p {
             margin: 5px 0;
-            font-size: 14px;
-            line-height: 1.5;
+            font-size: 18px;
         }
 
         .time-block a {
@@ -76,7 +79,7 @@
             padding: 20px;
             background-color: #f1f1f1;
             text-align: center;
-            font-size: 14px;
+            font-size: 18px;
             color: #333;
             border-top: 1px solid #ccc;
         }
@@ -104,7 +107,7 @@
 
         .credits {
             margin-top: 10px;
-            font-size: 12px;
+            font-size: 16px;
             color: #666;
         }
 
@@ -125,7 +128,7 @@
         /* Mobile Responsiveness */
         @media (max-width: 600px) {
             header h1 {
-                font-size: 20px;
+                font-size: 24px;
             }
 
             .time-block {
@@ -133,11 +136,11 @@
             }
 
             .time-block h3 {
-                font-size: 16px;
+                font-size: 20px;
             }
 
             .time-block p {
-                font-size: 13px;
+                font-size: 16px;
             }
 
             .legend {
@@ -169,48 +172,48 @@
         // Map activity types to styles
         const activityStyles = {
             Flight: {
-                outlineColor: '#ADD8E6', // Light Blue
-                titleColor: '#4682B4',  // Steel Blue
+                outlineColor: '#003366', // Consistent Dark Blue
+                titleColor: '#003366',
                 emoji: '✈️'
             },
             Hotel: {
-                outlineColor: '#B0B0B0', // Grey
-                titleColor: '#696969',   // Dim Grey
+                outlineColor: '#003366',
+                titleColor: '#003366',
                 emoji: '🏨'
             },
             Tour: {
-                outlineColor: '#32CD32', // Green
-                titleColor: '#228B22',   // Forest Green
+                outlineColor: '#003366',
+                titleColor: '#003366',
                 emoji: '🗺️'
             },
             Adventure: {
-                outlineColor: '#FFA500', // Orange
-                titleColor: '#FF8C00',   // Dark Orange
+                outlineColor: '#003366',
+                titleColor: '#003366',
                 emoji: '🎢'
             },
             RoadTrip: {
-                outlineColor: '#000000', // Black
-                titleColor: '#333333',   // Charcoal
+                outlineColor: '#003366',
+                titleColor: '#003366',
                 emoji: '🚗'
             },
             Breakfast: {
-                outlineColor: '#FFFACD', // Light Yellow
-                titleColor: '#FFD700',   // Gold
+                outlineColor: '#003366',
+                titleColor: '#003366',
                 emoji: '🍳'
             },
             Lunch: {
-                outlineColor: '#FFEB3B', // Medium Yellow
-                titleColor: '#BDB76B',   // Dark Khaki
+                outlineColor: '#003366',
+                titleColor: '#003366',
                 emoji: '🥗'
             },
             Dinner: {
-                outlineColor: '#FFD700', // Dark Yellow
-                titleColor: '#DAA520',   // Goldenrod
+                outlineColor: '#003366',
+                titleColor: '#003366',
                 emoji: '🍽️'
             },
             FreeTime: {
-                outlineColor: '#00008B', // Dark Blue
-                titleColor: '#000080',   // Navy Blue
+                outlineColor: '#003366',
+                titleColor: '#003366',
                 emoji: '🕰️'
             }
         };
