@@ -44,8 +44,6 @@
 
         .time-block {
             border-radius: 10px;
-            background-color: #F0F0F0; /* Light Grey Background */
-            color: #003366; /* Dark Blue Text */
             padding: 20px;
             margin-bottom: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -111,6 +109,27 @@
             color: #666;
         }
 
+        /* Activity Styles */
+        .time-block.free-time {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+
+        .time-block.flight {
+            background-color: #D3D3D3;
+            color: #333333;
+        }
+
+        .time-block.booked {
+            background-color: #32CD32;
+            color: #FFFFFF;
+        }
+
+        .time-block.planned {
+            background-color: #1E90FF;
+            color: #FFFFFF;
+        }
+
         /* Dark Mode */
         body.dark-mode {
             background-color: #121212;
@@ -118,7 +137,7 @@
         }
 
         body.dark-mode .time-block {
-            background-color: #1e1e1e;
+            color: #f9f9f9;
         }
 
         body.dark-mode footer {
@@ -158,7 +177,22 @@
     <div class="container" id="schedule-container"></div>
     <footer>
         <div class="legend">
-            <!-- Legend items for each activity type -->
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #FFFFFF;"></span>
+                <span>Free Time</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #D3D3D3;"></span>
+                <span>Flight</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #32CD32;"></span>
+                <span>Booked Activity</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #1E90FF;"></span>
+                <span>Planned Activity</span>
+            </div>
         </div>
         <div class="credits">
             <p>Funding: Mom/Grandma</p>
@@ -171,51 +205,10 @@
     <script>
         // Map activity types to styles
         const activityStyles = {
-            Flight: {
-                outlineColor: '#003366', // Consistent Dark Blue
-                titleColor: '#003366',
-                emoji: '✈️'
-            },
-            Hotel: {
-                outlineColor: '#003366',
-                titleColor: '#003366',
-                emoji: '🏨'
-            },
-            Tour: {
-                outlineColor: '#003366',
-                titleColor: '#003366',
-                emoji: '🗺️'
-            },
-            Adventure: {
-                outlineColor: '#003366',
-                titleColor: '#003366',
-                emoji: '🎢'
-            },
-            RoadTrip: {
-                outlineColor: '#003366',
-                titleColor: '#003366',
-                emoji: '🚗'
-            },
-            Breakfast: {
-                outlineColor: '#003366',
-                titleColor: '#003366',
-                emoji: '🍳'
-            },
-            Lunch: {
-                outlineColor: '#003366',
-                titleColor: '#003366',
-                emoji: '🥗'
-            },
-            Dinner: {
-                outlineColor: '#003366',
-                titleColor: '#003366',
-                emoji: '🍽️'
-            },
-            FreeTime: {
-                outlineColor: '#003366',
-                titleColor: '#003366',
-                emoji: '🕰️'
-            }
+            FreeTime: 'free-time',
+            Flight: 'flight',
+            Booked: 'booked',
+            Planned: 'planned'
         };
 
         async function loadSchedule() {
@@ -240,35 +233,19 @@
 
                 dailyData.timeBlocks.forEach(block => {
                     const activityType = block.type || 'FreeTime'; // Default to FreeTime if type is missing
-                    const style = activityStyles[activityType];
+                    const styleClass = activityStyles[activityType] || 'free-time';
 
                     const blockElement = document.createElement('div');
-                    blockElement.className = 'time-block';
-                    blockElement.style.border = `2px solid ${style.outlineColor}`;
-                    blockElement.style.color = `${style.titleColor}`;
+                    blockElement.className = `time-block ${styleClass}`;
 
                     // Build the content dynamically
                     blockElement.innerHTML = `
-                        <h3>${style.emoji} ${block.time}</h3>
+                        <h3>${block.time}</h3>
                         <p><strong>Location:</strong> <a href="${block.location.url}" target="_blank">${block.location.name}</a></p>
                         <p><strong>Details:</strong> ${block.details}</p>
                     `;
 
                     scheduleContainer.appendChild(blockElement);
-                });
-
-                // Populate footer legend
-                const legendContainer = document.querySelector('.legend');
-                legendContainer.innerHTML = ''; // Clear existing legend content
-                Object.keys(activityStyles).forEach(type => {
-                    const { outlineColor, emoji } = activityStyles[type];
-                    const legendItem = document.createElement('div');
-                    legendItem.className = 'legend-item';
-                    legendItem.innerHTML = `
-                        <span class="legend-color" style="background-color: ${outlineColor};"></span>
-                        <span>${emoji} ${type}</span>
-                    `;
-                    legendContainer.appendChild(legendItem);
                 });
             } catch (error) {
                 console.error('Error loading schedule:', error);
