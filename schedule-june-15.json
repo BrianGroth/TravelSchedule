@@ -3,83 +3,74 @@
     "date": "December 30, 2024",
     "timeBlocks": [
         {
-            "time": "06:00 AM - 08:00 AM",
+            "startTime": "06:00 AM",
             "type": "Booked",
             "location": {
-                "name": "City International Airport",
-                "url": "https://goo.gl/maps/exampleFlight"
+                "name": "City International Airport"
             },
             "details": "Check-in starts at 5:00 AM. Bring your passport and boarding pass."
         },
         {
-            "time": "08:30 AM - 09:30 AM",
+            "startTime": "08:30 AM",
             "type": "Planned",
             "location": {
-                "name": "Airport Lounge",
-                "url": "https://goo.gl/maps/exampleBreakfast"
+                "name": "Airport Lounge"
             },
             "details": "Enjoy a complimentary buffet breakfast."
         },
         {
-            "time": "10:00 AM - 12:00 PM",
+            "startTime": "10:00 AM",
             "type": "Booked",
             "location": {
-                "name": "Grand Stay Hotel",
-                "url": "https://goo.gl/maps/exampleHotel"
+                "name": "Grand Stay Hotel"
             },
             "details": "Check-in and drop off luggage."
         },
         {
-            "time": "01:00 PM - 03:00 PM",
+            "startTime": "01:00 PM",
             "type": "Planned",
             "location": {
-                "name": "Downtown Cafe",
-                "url": "https://goo.gl/maps/exampleLunch"
+                "name": "Downtown Cafe"
             },
             "details": "Try a variety of local dishes."
         },
         {
-            "time": "03:30 PM - 05:30 PM",
+            "startTime": "03:30 PM",
             "type": "Booked",
             "location": {
-                "name": "Historical District",
-                "url": "https://goo.gl/maps/exampleTour"
+                "name": "Historical District"
             },
             "details": "Explore landmarks with a guide."
         },
         {
-            "time": "06:00 PM - 07:00 PM",
+            "startTime": "06:00 PM",
             "type": "Planned",
             "location": {
-                "name": "Adventure Park",
-                "url": "https://goo.gl/maps/exampleAdventure"
+                "name": "Adventure Park"
             },
             "details": "Experience an adrenaline-filled zip-lining session."
         },
         {
-            "time": "07:30 PM - 09:00 PM",
+            "startTime": "07:30 PM",
             "type": "Booked",
             "location": {
-                "name": "Skyline Restaurant",
-                "url": "https://goo.gl/maps/exampleDinner"
+                "name": "Skyline Restaurant"
             },
             "details": "Savor a multi-course gourmet meal."
         },
         {
-            "time": "09:30 PM - 11:00 PM",
+            "startTime": "09:30 PM",
             "type": "Planned",
             "location": {
-                "name": "Coastal Highway",
-                "url": "https://goo.gl/maps/exampleRoadTrip"
+                "name": "Coastal Highway"
             },
             "details": "Enjoy a scenic drive along the coast."
         },
         {
-            "time": "11:30 PM - 12:30 AM",
+            "startTime": "11:30 PM",
             "type": "Planned",
             "location": {
-                "name": "Hotel Room",
-                "url": "https://goo.gl/maps/exampleFreeTime"
+                "name": "Hotel Room"
             },
             "details": "Relax, read a book, or watch a movie."
         }
