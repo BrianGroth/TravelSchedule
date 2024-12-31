@@ -3,7 +3,7 @@
     "date": "Sunday, June 15th, 2025",
     "timeBlocks": [
         {
-            "time": "06:00 AM - 08:00 AM",
+            "time": "06:00 AM",
             "type": "Flight",
             "title": "Morning Flight to Destination",
             "location": {
@@ -15,7 +15,7 @@
             "tags": ["travel", "morning", "transport"]
         },
         {
-            "time": "08:30 AM - 09:30 AM",
+            "time": "08:30 AM",
             "type": "Breakfast",
             "title": "Buffet Breakfast",
             "location": {
